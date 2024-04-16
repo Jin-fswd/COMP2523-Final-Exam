@@ -18,7 +18,7 @@ class Household {
       let person = this.inhabitants.find(p => p.phn === phn && !p.isVaccinated);
       if (person) {
         clinic.registerPerson(person);
-        console.log(`${person.fullName} is  registered at ${clinic.name}`);
+        //console.log(`${person.fullName} is  registered at ${clinic.name}`);
       }
     }
   }

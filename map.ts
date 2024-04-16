@@ -86,12 +86,12 @@ registerForShots() {
         if (!inhabitant.isVaccinated && inhabitant.age >= this.currentIntake) {
           const closestClinic = this.findClosestClinic(household.blockNum);
           household.vaccinatePerson(inhabitant.phn, closestClinic);
-          console.log(` ${closestClinic.name} wait time is ${closestClinic.getCurrentWaitTime()}minute`);
+          //console.log(` ${closestClinic.name} wait time is ${closestClinic.getCurrentWaitTime()}minute`);
         }
       });
-      if (household.isFullyVaccinated()) {
-        console.log(`block ${household.blockNum} vaccinated`);
-      }
+    //   if (household.isFullyVaccinated()) {
+    //     console.log(`block ${household.blockNum} vaccinated`);
+    //   }
     });
   }
   private findClosestClinic(blockNum: number): Clinic {

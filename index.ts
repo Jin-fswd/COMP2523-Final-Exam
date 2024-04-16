@@ -9,13 +9,14 @@ async function main() {
     map.printMap();
     console.log("---End of Map---")
     map.registerForShots();
+    map.printMap();
+    console.log("---End of Map---")
     const report = new ReportMaker(new SimpleReport(map.getClinics()));
     report.printDetails();
     const report2 =  new ReportMaker(new ComplexReport(map.getClinics()));
     report2.printDetails();
     console.log("---End of Report---")
-    map.printMap();
-    console.log("---End of Map---")
+    
   }
   
   main();

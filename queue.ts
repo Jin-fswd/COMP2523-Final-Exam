@@ -12,6 +12,10 @@ class Queue<T> {
     size(): number {
       return this.storage.length;
     }
+    
+    getContents(): T[] {
+        return this.storage;
+    }
   }
   
 

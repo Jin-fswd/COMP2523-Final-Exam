@@ -9,7 +9,7 @@ export class SimpleReport implements IReport {
   }
 
   printDetails() {
-    console.log("Simple Report: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+    console.log("Simple Report: ");
     this.clinics.forEach(clinic => {
       console.log(`${clinic.name} - # of people: ${clinic.waitlist.size()}`);
     });
