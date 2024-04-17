@@ -52,7 +52,7 @@ class Map {
   }
   getClinics(): Clinic[] {
     return this.clinics;
-}
+  }
   //"households": [{"blockNum": 0, "inhabitants": [{"phn": "AbZ123", "fullName": "Mark Anton", "isVaccinated": false, "age": 20},
   //{"phn": "1f8S56", "fullName": "Emma Watson", "isVaccinated": false, "age": 40},
   //{"phn": "1fWEF6", "fullName": "Indiana Jones", "isVaccinated": false, "age": 45}]}, {"blockNum": 2, "inhabitants": [{"phn": "789", "fullName": "Sam Smith", "isVaccinated": true, "age": 80}]}, {"blockNum": 1, "inhabitants": [{"phn": "7ASF89", "fullName": "Jared Palmer", "isVaccinated": true, "age": 80}]}],
@@ -80,22 +80,26 @@ class Map {
     mapLines.forEach((line) => console.log(line));
   }
 
-registerForShots() {
-    this.households.forEach(household => {
-      household.inhabitants.forEach(inhabitant => {
+  registerForShots() {
+    this.households.forEach((household) => {
+      household.inhabitants.forEach((inhabitant) => {
         if (!inhabitant.isVaccinated && inhabitant.age >= this.currentIntake) {
           const closestClinic = this.findClosestClinic(household.blockNum);
           household.vaccinatePerson(inhabitant.phn, closestClinic);
           //console.log(` ${closestClinic.name} wait time is ${closestClinic.getCurrentWaitTime()}minute`);
         }
       });
-    //   if (household.isFullyVaccinated()) {
-    //     console.log(`block ${household.blockNum} vaccinated`);
-    //   }
+      //   if (household.isFullyVaccinated()) {
+      //     console.log(`block ${household.blockNum} vaccinated`);
+      //   }
     });
   }
   private findClosestClinic(blockNum: number): Clinic {
-    return this.clinics.reduce((prev, curr) => Math.abs(curr.blockNum - blockNum) < Math.abs(prev.blockNum - blockNum) ? curr : prev);
+    return this.clinics.reduce((prev, curr) =>
+      Math.abs(curr.blockNum - blockNum) < Math.abs(prev.blockNum - blockNum)
+        ? curr
+        : prev
+    );
   }
 }
 

@@ -1,4 +1,4 @@
-import { IReport }  from "./IReport";
+import { IReport } from "./IReport";
 
 class ReportMaker {
   private report: IReport;
