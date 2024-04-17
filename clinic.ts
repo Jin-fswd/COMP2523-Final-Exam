@@ -4,13 +4,13 @@ class Clinic {
     name: string;
     blockNum: number;
     staff: number;
-    waitlist: Queue<any>;  // The Queue class should handle objects representing people.
+    waitlist: Queue<{phn: string, fullName: string, isVaccinated: boolean, age: number}>;  // The Queue class should handle objects representing people.
   
     constructor(name: string, blockNum: number, staff: number) {
       this.name = name;
       this.blockNum = blockNum;
       this.staff = staff;
-      this.waitlist = new Queue<any>();
+      this.waitlist = new Queue<{phn: string, fullName: string, isVaccinated: boolean, age: number}>();
     }
     registerPerson(person: any) {
         person.isVaccinated = true;  // 
@@ -21,7 +21,7 @@ class Clinic {
     }
   
     getLineupNames(): string[] {
-      return this.waitlist.getContents().map(person => person.name);
+      return this.waitlist.getContents().map(person => person.fullName);
     }
   }
 

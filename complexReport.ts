@@ -11,8 +11,8 @@ export class ComplexReport implements IReport {
   printDetails() {
     console.log("hit print Complex Report!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     this.clinics.forEach(clinic => {
-      console.log(`${clinic.name} - avg wating time : ${clinic.getCurrentWaitTime()} min, # of people waiting : ${clinic.waitlist.size()}`);
-      console.log(`names people in Lineup: ${clinic.name} - ${clinic.getLineupNames().join(', ')}`);
+      console.log(`${clinic.name} - avg wating time : ${clinic.getCurrentWaitTime()} min`);
+      console.log(`${clinic.name} :  People in queue:  - ${clinic.getLineupNames().join(', ')}`);
     });
   }
 }
