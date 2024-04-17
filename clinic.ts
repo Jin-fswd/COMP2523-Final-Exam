@@ -9,7 +9,7 @@ class Clinic {
     fullName: string;
     isVaccinated: boolean;
     age: number;
-  }>; // The Queue class should handle objects representing people.
+  }>;
 
   constructor(name: string, blockNum: number, staff: number) {
     this.name = name;
@@ -23,11 +23,11 @@ class Clinic {
     }>();
   }
   registerPerson(person: any) {
-    person.isVaccinated = true; //
+    person.isVaccinated = true;
     this.waitlist.enqueue(person);
   }
   getCurrentWaitTime(): number {
-    return this.waitlist.size() * 15; // Each person adds 15 minutes to the wait time.
+    return this.waitlist.size() * 15;
   }
 
   getLineupNames(): string[] {

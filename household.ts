@@ -3,8 +3,10 @@ import Clinic from "./clinic";
 class Household {
   blockNum: number;
   inhabitants: any[];
+  cityName: string;
 
-  constructor(blockNum: number, inhabitants: any[]) {
+  constructor(cityName: string, blockNum: number, inhabitants: any[]) {
+    this.cityName = cityName;
     this.blockNum = blockNum;
     this.inhabitants = inhabitants;
   }
@@ -17,9 +19,10 @@ class Household {
     let person = this.inhabitants.find((p) => p.phn === phn && !p.isVaccinated);
     if (person) {
       clinic.registerPerson(person);
-      //console.log(`${person.fullName} is  registered at ${clinic.name}`);
     }
   }
 }
 
 export default Household;
+
+

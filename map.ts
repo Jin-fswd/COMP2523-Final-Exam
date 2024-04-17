@@ -31,6 +31,7 @@ class Map {
 
       this._mapData.city[city].households.forEach((householdData: any) => {
         const household = new Household(
+          city,
           householdData.blockNum,
           householdData.inhabitants
         );
@@ -53,9 +54,6 @@ class Map {
   getClinics(): Clinic[] {
     return this.clinics;
   }
-  //"households": [{"blockNum": 0, "inhabitants": [{"phn": "AbZ123", "fullName": "Mark Anton", "isVaccinated": false, "age": 20},
-  //{"phn": "1f8S56", "fullName": "Emma Watson", "isVaccinated": false, "age": 40},
-  //{"phn": "1fWEF6", "fullName": "Indiana Jones", "isVaccinated": false, "age": 45}]}, {"blockNum": 2, "inhabitants": [{"phn": "789", "fullName": "Sam Smith", "isVaccinated": true, "age": 80}]}, {"blockNum": 1, "inhabitants": [{"phn": "7ASF89", "fullName": "Jared Palmer", "isVaccinated": true, "age": 80}]}],
   printMap() {
     const cityNames = Object.keys(this._mapData.city);
     const mapLines: string[] = [];

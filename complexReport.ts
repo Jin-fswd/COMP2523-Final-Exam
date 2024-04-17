@@ -10,7 +10,7 @@ export class ComplexReport implements IReport {
 
   printDetails() {
     console.log(
-      "hit print Complex Report!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      "Complex Report : "
     );
     this.clinics.forEach((clinic) => {
       console.log(
